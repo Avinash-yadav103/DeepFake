@@ -1,0 +1,2028 @@
+@font-face {
+  font-family: broadway;
+  src: url('/assets/fonts/Broadway_Regular.ttf');
+}
+
+@font-face {
+  font-family: broadway;
+  font-weight: bold;
+  src: url('/assets/fonts/Broadway_Bold.ttf');
+}
+
+@font-face {
+  font-family: 'TRLIT_CG Times';
+  src: url("/assets/fonts/Trlit_CG_Times.ttf") format("truetype");
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'TRLIT CG Times';
+  src: url("/assets/fonts/Trlit_CG_Times.ttf") format("truetype");
+  font-style: italic;
+}
+
+/* line 117, /Users/meng/pro/xml-html/vendor/assets/stylesheets/magnific-popup.css */
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 4, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list .google-scholar, #html-references_list .cross-ref {
+  -ms-word-break: normal;
+  word-break: normal;
+}
+/* line 7, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list a {
+  -ms-word-break: break-all;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+/* line 13, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol {
+  list-style: none;
+  padding: 0 0 0 2em;
+  *padding: 0 2em !important;
+  margin: 0;
+}
+/* line 18, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol li {
+  text-align: justify;
+  padding-left: 1em;
+}
+/* line 21, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol li::before {
+  content: attr(data-content);
+  width: 10%;
+}
+/* line 24, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol li:before {
+  content: attr(data-content);
+  width: 10%;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-x li {
+  text-indent: -1.4em;
+}
+/* line 30, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-x li.html-x::before {
+  padding-right: 0.5em;
+}
+/* line 32, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-x li.html-x:before {
+  padding-right: 0.5em;
+}
+/* line 35, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xx li {
+  text-indent: -1.9em;
+}
+/* line 37, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xx li.html-x::before {
+  padding-right: 1em;
+}
+/* line 39, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xx li.html-x:before {
+  padding-right: 1em;
+}
+/* line 41, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xx li.html-xx::before {
+  padding-right: 0.5em;
+}
+/* line 43, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xx li.html-xx:before {
+  padding-right: 0.5em;
+}
+/* line 46, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li {
+  text-indent: -2.4em;
+}
+/* line 48, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-x::before {
+  padding-right: 1.5em;
+}
+/* line 50, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-x:before {
+  padding-right: 1.5em;
+}
+/* line 52, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-xx::before {
+  padding-right: 1em;
+}
+/* line 54, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-xx:before {
+  padding-right: 1em;
+}
+/* line 56, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-xxx::before {
+  padding-right: 0.5em;
+}
+/* line 58, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+#html-references_list ol.html-xxx li.html-xxx:before {
+  padding-right: 0.5em;
+}
+
+#html-references_list ol.html-xxxx li {
+  text-indent: -2.9em;
+}
+#html-references_list ol.html-xxxx li.html-x::before {
+  padding-right: 2.4em;
+}
+#html-references_list ol.html-xxxx li.html-x:before {
+  padding-right: 2.4em;
+}
+#html-references_list ol.html-xxxx li.html-xx::before {
+  padding-right: 1.5em;
+}
+#html-references_list ol.html-xxxx li.html-xx:before {
+  padding-right: 1.5em;
+}
+#html-references_list ol.html-xxxx li.html-xxx::before {
+  padding-right: 1em;
+}
+#html-references_list ol.html-xxxx li.html-xxx:before {
+  padding-right: 1em;
+}
+#html-references_list ol.html-xxxx li.html-xxxx::before {
+  padding-right: 0.5em;
+}
+#html-references_list ol.html-xxxx li.html-xxxx:before {
+  padding-right: 0.5em;
+}
+
+/* line 61, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-statement {
+  margin-left: 0em !important;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  max-width: 100%;
+  overflow-x: auto;
+  text-indent: 0 !important;
+  overflow-y: hidden;
+}
+/* line 65, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-statement p:first-of-type {
+  display: inline;
+}
+/* line 67, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-statement .html-p:first-of-type {
+  display: inline;
+}
+
+article .html-statement .html-order{
+  margin-left: 2px !important;
+}
+
+/* line 70, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article label {
+  float: right;
+  padding: 0;
+}
+/* line 74, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article img {
+  max-width: 100%;
+}
+/* line 77, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-small-caps {
+  font-variant: small-caps;
+}
+/* line 81, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-def_list th {
+  padding: 0.5em 0;
+}
+article .additional-content h2 {
+    font-size: 18px;
+}
+article .additional-content p {
+    text-indent: 0;
+}
+
+/* line 84, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-body {
+  padding: 0;
+  margin: 1.5em 0 0;
+  text-align: justify;
+}
+/* line 88, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-p, article p {
+  text-indent: 2em;
+  margin: 0;
+}
+article p {
+  font-size: inherit;
+}
+/* line 92, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-caption {
+  padding-top: 0.5em;
+}
+/* line 95, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-art-header {
+  padding: 0 0 0.5em;
+  margin: 0;
+  line-height: 1.5em;
+}
+/* line 98, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-art-header .html-p, article .html-art-header p {
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  text-align: left;
+}
+/* line 103, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-art-type {
+  /*padding: 0.5em 0;*/
+    padding-top: 0.5em;
+  margin: 0;
+  font-style: italic;
+}
+/* line 107, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-art-type .html-p, article .html-art-type p {
+  padding: 0;
+  margin: 0;
+}
+/* line 111, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article #html-article-title {
+  font-size: 1.5em;
+  font-weight: 700;
+  /*padding: 0.5em 0;*/
+  padding-bottom: 0.5em;
+  text-align: left;
+  line-height: 1.3em;
+}
+/* line 118, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-author-group {
+  font-weight: 700;
+  padding: 0.5em 0;
+  text-align: left;
+}
+/* line 122, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-author-group span {
+  cursor: pointer;
+}
+
+article .html-author-group a {
+  color: black;
+}
+
+article .html-author-group img {
+    border: 0;
+}
+
+/* line 125, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-history {
+  /*font-style: italic;*/
+  /*padding: 0.5em 0;*/
+    padding-left: 0.5em;
+}
+
+article .download {
+    margin-top: 10px;
+}
+
+article .download a.button {
+    color: #fff !important;
+}
+
+/* line 129, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article #html-abstract-title {
+  font-weight: 700;
+}
+
+article #html-keywords-title {
+  font-weight: 700;
+  display: inline;
+}
+
+/* line 133, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  top: -0.5em;
+}
+/* line 139, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn_group {
+  font-size: 0.875em;
+  border-top: 1px #cccccc solid;
+}
+/* line 142, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn_group ul {
+  padding: 0;
+}
+/* line 144, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn_group li {
+  width: 100%;
+}
+/* line 147, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn_group li .html-fn-label {
+  float: left;
+  width: 4%;
+  white-space: nowrap;
+}
+
+article .html-fn_group td{
+  vertical-align: top;
+}
+
+article .html-fn_group .html-p{
+  text-indent: 0;
+  text-align: justify;
+}
+
+/* line 151, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-fn_group li .html-fn-content {
+  float: left;
+  width: 96%;
+}
+/* line 155, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  font-family: inherit;
+}
+/* line 158, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-body img {
+  border: 1px #cccccc solid;
+}
+
+article .html-back .html-table-wrap img {
+  border: 1px #cccccc solid;
+}
+
+article .html-back .html-fig_img img {
+  border: 1px #cccccc solid;
+}
+/* line 161, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article table {
+  font-size: 100%;
+}
+/* line 164, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-indented-block {
+  padding: 1em 0 1em 2em;
+}
+/* line 166, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-overline {
+  text-decoration: overline;
+}
+/* line 170, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article #html-glossary table {
+  padding-top: 0.625em;
+}
+/* line 172, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article #html-glossary .html-item_def {
+  padding-left: 3.125em;
+}
+/* line 175, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-alpha-lower {
+  list-style-type: lower-alpha;
+}
+/* line 178, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-sans-serif {
+  font-family: Sans-Serif;
+}
+/* line 181, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-supplementary_p {
+  padding-left: 3px;
+}
+/* line 184, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-boxed {
+  padding-bottom: 0.5em;
+}
+/* line 186, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-boxed .html-bullet {
+  list-style-type: disc;
+  padding: 0 1em;
+}
+/* line 189, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-boxed .html-boxed-title {
+  text-align: justify;
+  padding: 0.5em;
+  padding-left: 2%;
+  text-indent: 0;
+}
+/* line 192, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-boxed .html-boxed-body {
+  border: 0.125em black solid;
+  padding: 1em;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+article .html-boxed .html-boxed-body .html-p{
+  text-indent: 0;
+}
+/* line 195, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article .html-boxed h4 {
+  font-weight: bold;
+}
+/* line 198, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article blockquote {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  border-left: none;
+}
+/* line 199, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article blockquote .html-blockquote {
+  margin: 0 1.25em;
+  text-indent: 0;
+}
+/* line 202, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article blockquote .html-p, article blockquote p {
+  text-indent: 0em;
+  padding-bottom: 0;
+  margin-top: 0.5em;
+}
+/* line 209, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+article #html-copyright {
+  text-indent: 0;
+}
+
+/* line 212, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-ref-tip {
+  font-size: 0.8125em;
+}
+
+/* line 214, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-blockquote-attrib {
+  text-align: right;
+  margin-top: 0;
+}
+
+/* line 217, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-sig-block {
+  text-align: right;
+}
+
+/* line 219, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-external_editor {
+  /*padding: 0.5em 0;*/
+    padding-left: 0.5em;
+}
+
+.art-affiliations {
+    padding: 0.5em 0 0.5em 0.5em;
+}
+
+/* line 221, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-array_table {
+  padding-left: 1em;
+  margin: 0.5em auto;
+  width: auto;
+  background: inherit;
+}
+
+table.html-array_table tr {
+    background-color: inherit !important;
+}
+
+/* line 224, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-graphic {
+  display: block;
+  max-width: 100%;
+}
+
+/* line 227, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-p {
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -moz-margin-before: 1em;
+  -moz-margin-after: 1em;
+  -moz-margin-start: 0px;
+  -moz-margin-end: 0px;
+}
+
+/* line 236, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-caption-img {
+  margin: 0.5em auto;
+}
+/* line 238, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-caption-img img {
+  max-width: 100%;
+}
+
+/* line 241, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-abstract .html-p {
+  text-indent: 0;
+  margin-top: 0.5em;
+}
+.art-abstract {
+  text-align: justify;
+}
+
+/* line 244, /Users/meng/pro/xml-html/app/assets/stylesheets/common.css.sass */
+.html-abstract .html-p:first-of-type {
+  display: inline;
+  margin-top: 0;
+}
+
+/* line 4, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article {
+  -webkit-text-size-adjust: 100%;
+  /*padding-top: 40px;*/
+  padding-top: 70px;
+  /*margin-top: 60px;*/
+}
+
+/* line 39, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-disc {
+  list-style-type: disc;
+  text-indent: 0;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-disc li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-disc li .html-p, ul.html-disc li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-disc dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 43, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-lower {
+  list-style-type: lower-roman;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-lower dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-lower li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-lower li .html-p, ul.html-roman-lower li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+
+/* line 47, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-lower {
+  list-style-type: lower-alpha;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-lower li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-lower li .html-p, ul.html-alpha-lower li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-lower dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 51, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-upper {
+  list-style-type: upper-alpha;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-upper li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-upper li .html-p, ul.html-alpha-upper li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-alpha-upper dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 55, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-upper {
+  list-style-type: upper-roman;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-upper li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-upper li .html-p, ul.html-roman-upper li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-roman-upper dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 59, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-simple {
+  list-style-type: none;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-simple li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-simple li .html-p, ul.html-simple li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-simple dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 63, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-order {
+  list-style-type: decimal;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-order li {
+  clear: both;
+  width: 100%;
+}
+
+
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-order li .html-p, ul.html-order li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+ul.html-order dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 72, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show {
+  position: relative;
+  padding: 26px;
+  width: auto;
+  max-width: 1150px;
+  min-width: 550px;
+  margin: 1.25em auto;
+  overflow: auto;
+}
+
+.html-table_show .html-table-img {
+    text-align: center;
+}
+
+/* line 80, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show img {
+  max-width: 100%;
+}
+
+article .html-table_show table tr th {
+  font-weight: bold;
+}
+/* line 83, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show dl dt {
+  float: left;
+  clear: left;
+  text-align: right;
+}
+/* line 87, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show dl .html-p, .html-table_show dl p {
+  text-indent: 0;
+}
+/* line 89, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show caption {
+  padding-bottom: 0.5em;
+  width: 96%;
+  margin: 0 auto;
+  text-align: justify;
+}
+/* line 94, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-table_show .html-table_foot {
+  text-indent: 0;
+  padding: 0 1em;
+  height: auto;
+}
+
+/* line 116, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-array-table {
+  width: 100%;
+}
+/* line 118, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-array-table td {
+  width: auto;
+}
+
+/* line 121, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig_show {
+  position: relative;
+  padding: 2em;
+  width: auto;
+  max-width: 600px;
+  margin: 2.25em auto 1.25em auto;
+  overflow: auto;
+}
+/* line 128, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig_show .html-caption {
+  padding-bottom: 0.5em;
+  width: 96%;
+  margin: 0 auto;
+}
+/* line 132, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig_show .html-img {
+  text-align: center;
+}
+
+.html-fig_show .html-caption .html-p{
+  text-indent: 0em;
+}
+/* line 135, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig-wrap {
+  width: 100%;
+  margin: 1em 0;
+  text-indent: 0;
+  text-align: center;
+}
+/* line 140, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig-wrap .html-fig_img {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 1em 2% 1em 1%;
+}
+/* line 147, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig-wrap .html-fig_img img {
+  padding: 8px;
+  margin-top: 8px;
+  max-width: 400px;
+  min-width: 150px;
+  background: white;
+}
+
+.html-fig-wrap .html-fig_img img:nth-child(1):nth-last-child(2){
+  max-height: 400px;
+}
+
+/* line 152, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-fig-wrap .html-fig_description {
+  display: inline-block;
+  padding: 0.2em 2% 0.2em 4%;
+  text-align: justify;
+  max-width: 100%
+}
+
+.html-fig-wrap .html-fig_description .html-p{
+  text-indent: 0em;
+}
+
+/* line 157, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-nav {
+  position: absolute;
+  /*width: 164px;*/
+  list-style-type: none;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: -25px !important;
+  margin-right: -25px !important;
+}
+
+.html-nav.affix-top {
+    position: relative;
+}
+
+.html-nav.affix,
+.html-nav.affix-bottom {
+    background-color: #fff;
+    padding-top: 10px !important;
+    padding-bottom: 25px !important;
+}
+/* line 161, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+/*.html-nav .active {*/
+  /*background: url(data:image/gif;base64,R0lGODlhBAAHAIABADxjrwAAACH5BAEAAAEALAAAAAAEAAcAAAIIRA4WaeyrVCgAOw==) no-repeat 0 4px;*/
+/*}*/
+/* line 163, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+/*.html-nav a {*/
+  /*text-decoration: none;*/
+  /*margin-left: 6px;*/
+/*}*/
+
+/* line 166, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-italic {
+  font-style: italic;
+}
+/* line 168, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-italic .html-italic {
+  font-style: normal;
+}
+
+
+/* line 173, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article {
+  /*padding: 50px 6%; */
+  /*font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;*/
+  font-family: Arial, Helvetica, sans-serif;
+  /*text-align: justify;*/
+  font-size: 110%;
+  word-wrap: break-word;
+  /*letter-spacing: 0.15pt;*/
+  line-height: 1.5em;
+  /*border: 1px solid #cccccc;*/
+  background-color: #fff;
+  width: 100%;
+  float: left;
+}
+/* line 174, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article a {
+  text-decoration: none;
+}
+/* line 8, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article sup {
+  font-size: smaller;
+  vertical-align: baseline;
+  position: relative;
+  bottom: 0.33em;
+}
+/* line 15, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article sub {
+  font-size: smaller;
+  vertical-align: baseline;
+  position: relative;
+  bottom: -0.25em;
+}
+/* line 178, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article section {
+  margin: 0.5em 0;
+}
+/* line 191, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-disp-formula-info {
+  text-align: center;
+  margin: 0.5em auto;
+  display: table;
+  width: 100%;
+}
+/* line 196, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-disp-formula-info .f {
+  display: table-cell;
+  width: 90%;
+  vertical-align: middle;
+  font-size: 0.9em;
+}
+article .html-disp-formula-info .f .MathJax_Display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+article .html-disp-formula-info .f .MJXc-display {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+/* line 201, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-disp-formula-info .l {
+  display: table-cell;
+  width: 10%;
+  vertical-align: middle;
+}
+/* line 205, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-disp-formula-info .html-fig-inline img {
+  max-width: 90%;
+}
+/* line 209, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article  .html-aff-group, article .html-front .html-notes {
+  padding: 0.5em 0;
+  text-align: justify;
+  vertical-align: top;
+}
+article .html-front, article .html-body, article .html-back {
+    padding-left: 0%;
+    padding-right: 0%;
+    text-align: justify;
+}
+
+/* line 213, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-aff-group .html-aff, article .html-front .html-aff-group .html-note, article .html-front .html-notes .html-aff, article .html-front .html-notes .html-note {
+  display: table;
+  width: 100%;
+}
+/* line 216, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-aff-group .html-aff .html-label, article .html-front .html-aff-group .html-note .html-label, article .html-front .html-notes .html-aff .html-label, article .html-front .html-notes .html-note .html-label {
+  float: left;
+  width: 2%;
+  padding-right: 1%;
+  text-align: left;
+  font-weight: bold;
+  white-space: nowrap;
+}
+/* line 223, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-aff-group .html-aff .html-content, article .html-front .html-aff-group .html-note .html-content, article .html-front .html-notes .html-aff .html-content, article .html-front .html-notes .html-note .html-content {
+  float: left;
+  width: 97%;
+}
+
+article section .html-aff-group, article section .html-author-group{
+  text-indent: 0;
+  font-weight: normal;
+}
+
+article section .html-aff-group{
+  padding: 0.5em 0;
+}
+article section .html-aff-group .html-aff .html-label sup{
+  font-weight: normal;
+}
+
+article section .html-author-group{
+  padding-bottom: 0;
+}
+
+/* line 227, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-abstract {
+  /*border-top: 1px #cccccc solid;*/
+  margin: 1em 0 0;
+  /*padding: 0.5em 1em;*/
+}
+/* line 232, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article #html-keywords {
+   margin-top: 5px;
+  /*padding: 0.5em 1em;*/
+}
+article #html-keywords .MathJax {
+    font-weight: 700;
+}
+/* line 236, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-gwd-group {
+  margin-bottom: 0.5em;
+}
+/* line 239, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0.5em 0 !important;
+  padding: 0;
+}
+/* line 246, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article h2 {
+  font-size: 100%;
+  font-weight: 700;
+  margin: 0.5em 0;
+  padding: 0;
+}
+/* line 252, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article h4, article h3, article h5{
+  font-size: 100%;
+  padding: 0;
+  margin: 0.5em 0 !important;
+  font-weight: 400;
+  font-style: normal;
+}
+/* line 259, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-table-wrap {
+  width: 100%;
+  margin: 1em 0;
+  text-indent: 0;
+  text-align: center;
+}
+/* line 264, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-table-wrap .html-table_wrap_td {
+  position: relative;
+  vertical-align: middle;
+  margin: 1em 2% 1em 1%;
+  text-align: center;
+}
+/* line 271, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-table-wrap .html-table_wrap_td img {
+  width: 200px;
+}
+/* line 274, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-table-wrap .html-table_wrap_discription {
+  padding: 0.2em 2% 0.2em 4%;
+  text-align: justify;
+  display: inline-block;
+  max-width: 100%;
+}
+article .html-table-wrap .html-table_wrap_discription .html-bibr {
+    word-break: break-all;
+}
+/* line 279, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ul {
+  /*margin-left: 1.5em;*/
+  margin-top: 0.5em !important;
+  margin-bottom: 0.5em !important;
+  padding-left: 1em;
+  list-style-type: none;
+  margin-left: 0;
+}
+/* line 28, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ul li {
+  clear: both;
+  width: 100%;
+}
+/* line 31, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ul li .html-p, article ul li p {
+  width: auto;
+  float: none;
+  text-indent: 0;
+}
+/* line 22, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ul dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 287, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl  {
+  padding-left: 0
+}
+/* line 289, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl ul {
+  margin-top: 0px;
+  margin-left: 1.25em;
+  padding-left: 0px;
+}
+/* line 293, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl dl {
+  margin-top: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+/* line 297, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl dt {
+  float: left;
+  clear: left;
+  text-align: right;
+  font-weight: normal;
+  margin-bottom: 0px;
+}
+/* line 301, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl p {
+  text-indent: 0;
+}
+/* line 303, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl dd {
+  margin-bottom: 0em;
+}
+/* line 305, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article dl dd .html-p, article dl dd p {
+  text-indent: 0em;
+  margin-left: 0;
+}
+/* line 308, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ol {
+  padding: 1em 2em 0;
+  margin: 0;
+  text-align: left;
+}
+/* line 312, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article ol li {
+  padding: 0.25em 0;
+}
+/* line 314, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-note-label {
+  float: left;
+}
+/* line 317, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-back-notes .html-p, article .html-back-notes p {
+  text-indent: 0;
+}
+/* line 320, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo {
+  float: right;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px #c8c8c8;
+  line-height: 1.5em;
+  font-size: 0.83em;
+  padding: 0.08em 0.2em;
+  margin: 0.2em 0 0;
+  text-decoration: none;
+}
+/* line 329, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo a:visite {
+  border-bottom: none;
+}
+/* line 331, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo a {
+  text-decoration: none;
+}
+/* line 333, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo a .html-oa-logo-extended {
+  display: none;
+  position: absolute;
+  border: 1px solid white;
+  padding: 0.2em;
+  font-weight: normal;
+}
+/* line 334, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo a .html-oa-logo-extended ul {
+  list-style-type: disc;
+}
+/* line 341, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-oa-logo a .html-oa-logo-extended ul {
+  padding: 0;
+  margin: 0 0 0 1.3em;
+}
+/* line 344, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article .html-preformat {
+  padding: 0.5em 0;
+  text-indent: 0;
+  display: block;
+  font-family: monospace, serif;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+article .highlights-backend ul {
+  list-style-type: disc;
+}
+
+/* line 352, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-first-step {
+  /*border-bottom: 1px solid white;*/
+  /*height: 70px;*/
+  /*margin-bottom: 20px;*/
+}
+/* line 356, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-first-step ul {
+  /*float: left;*/
+  /*list-style: none;*/
+}
+/* line 359, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-first-step ul li {
+  /*line-height: 1.5em;*/
+}
+/* line 361, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-first-step .html-font-resize li {
+  /*line-height: 2em;*/
+}
+/* line 363, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-first-step ul .html-font-label {
+  /*line-height: 1em;*/
+  /*padding-bottom: 0.3em;*/
+}
+
+/* line 367, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-family {
+  /*width: 44%;*/
+}
+/* line 369, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-family span {
+  /*float: left;*/
+  /*border-right: 1px solid white;*/
+  /*padding-right: 2%;*/
+  /*padding-left: 2%;*/
+  /*height: 1.25em;*/
+    margin-right: 10px;
+    color: black;
+}
+/* line 375, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-family .active i {
+  /*background: white;*/
+  /*background: #ccc;*/
+}
+/* line 378, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-family i {
+  font-style: normal;
+  padding: auto 2px;
+  cursor: pointer;
+}
+/* line 382, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-family .html-font-label {
+  /*margin-bottom: 0.7em;*/
+  /*padding-left: 0;*/
+}
+
+/* line 386, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-resize {
+  /*width: 26%;*/
+}
+/* line 388, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-resize span {
+  /*cursor: pointer;*/
+  /*padding-right: 3%;*/
+  /*padding-left: 3%;*/
+    margin-right: 10px;
+    position: relative;
+    top: -2px;
+}
+/* line 393, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-resize li {
+  /*line-height: 2em;*/
+}
+
+/* line 396, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-bg {
+  /*width: 26%;*/
+  /*float: left;*/
+  /*list-style: none;*/
+}
+/* line 400, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-bg li {
+  /*padding-bottom: 10px;*/
+}
+/* line 402, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-bg .html-nav-bg {
+  float: left;
+  /*padding-right: 15px;*/
+  /*padding-top: 0.2em;*/
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.html-nav-bg.active {
+    background-color: #f5f5f5;
+}
+/* line 407, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-bg .html-nav-bg i {
+  font-size: 1.5em;
+}
+/* line 409, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-font-bg .html-nav-creme {
+  color: #fafac8;
+}
+
+/* line 412, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-recomment-ul {
+  width: 26%;
+  float: left;
+  height: 1px;
+}
+/* line 416, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-recomment-ul .html-recomment-button {
+  width: 16%;
+  min-width: 170px;
+  float: left;
+  border: none;
+  background: #1d6297;
+  text-align: center;
+  padding: 8px 3px;
+  margin: 18px 0 5px 0;
+  border-radius: 3px;
+  line-height: 1em;
+}
+/* line 427, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-recomment-ul .html-recomment-button:hover {
+  background: #48516d;
+}
+
+@media screen and (max-width: 1024px) {
+  /* line 431, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+  .html-recomment-ul .html-recomment-button {
+    min-width: 140px;
+  }
+}
+/* line 434, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-line-space {
+  /*width: 44%;*/
+  /*float: left;*/
+}
+/* line 437, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-line-space li {
+  /*list-style: none;*/
+  /*padding-bottom: 5px;*/
+}
+/* line 440, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-line-space span {
+  /*margin-right: 1%;*/
+  /*cursor: pointer;*/
+  /*padding: 1% 2%;*/
+    margin-right: 15px;
+    position: relative;
+    top: -2px;
+}
+
+/* line 445, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width {
+  /*width: 26%;*/
+  /*float: left;*/
+  /*list-style: none;*/
+}
+/* line 449, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width li {
+  /*padding-bottom: 5px;*/
+}
+/* line 451, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width span {
+  /*margin-right: 1%;*/
+  /*cursor: pointer;*/
+  /*padding: 1% 3%;*/
+    margin-right: 15px;
+    position: relative;
+    top: -2px;
+}
+
+/* line 457, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .active, .html-line-space .active, .html-font-resize .active {
+  color: black;
+  /*background: white;*/
+  /*background: #ccc;*/
+}
+/* line 460, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .a1, .html-line-space .a1, .html-font-resize .a1 {
+  font-size: 1em;
+}
+/* line 462, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .a2, .html-line-space .a2, .html-font-resize .a2 {
+  font-size: 1.3em;
+}
+/* line 464, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .a3, .html-line-space .a3, .html-font-resize .a3 {
+  font-size: 1.6em;
+}
+/* line 466, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .a4, .html-line-space .a4, .html-font-resize .a4 {
+  font-size: 1.9em;
+}
+/* line 468, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-column-width .a5, .html-line-space .a5, .html-font-resize .a5 {
+  font-size: 2.2em;
+}
+
+/* line 471, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-article-menu {
+  clear: both;
+  display: none;
+  /*margin: 10px 0 0 3%;*/
+  /*text-align: left;*/
+  /*width: 97%;*/
+  /*float: left;*/
+  border-bottom: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #fff;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: -30px;
+  padding-top: 12px;
+  padding-top: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  line-height: 20px;
+  font-size: 14px;
+}
+
+.html-article-menu span {
+    padding: 5px;
+}
+
+.html-article-menu .html-article-menu-option {
+    cursor: pointer;
+}
+
+.html-article-menu span.active {
+    background-color: #f5f5f5;
+}
+
+.html-article-menu .columns {
+    margin-top: 0px;
+    padding-bottom: 0px;
+}
+
+.html-article-menu .row .row .columns {
+    min-height: 40px;
+    line-height: 40px;
+}
+
+.html-article-menu .row .row .columns.large-8 {
+    /*height: 40px;*/
+}
+
+/* line 478, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-article-menu .html-font-label {
+  /*font-style: italic;*/
+  /*line-height: 1em;*/
+}
+/* line 481, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-article-menu ul {
+  padding: 0 0 0 5px;
+  margin: 0;
+}
+
+/* line 485, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-sidebar {
+  list-style: none;
+  float: left;
+  width: 100%;
+  border-top: 1px solid white;
+  margin-top: 5px;
+  padding-bottom: 0;
+}
+/* line 492, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-sidebar li {
+  padding-top: 5px;
+}
+
+/* line 494, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav {
+  position: absolute;
+  z-index: 2;
+  /*color: white;*/
+  width: 100%;
+  /*background-color: black;*/
+  background-color: #fff;
+  /*cursor: pointer;*/
+  line-height: 0px;
+}
+
+.html-profile-nav.affix-top {
+    position: relative;
+}
+
+/* line 501, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .top-bar {
+  border-bottom: 1px solid #cccccc;
+}
+/* line 503, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .nav-btn {
+  float: right;
+  cursor: pointer;
+  /*margin-right: 3%;*/
+  /*font-size: 0.8em;*/
+  /*position: relative;*/
+  /*top: 10%;*/
+  /*bottom: 10%;*/
+  /*height: 80%;*/
+}
+/* line 511, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .nav-close-btn, .html-profile-nav .nav-loading {
+  display: none;
+  width: 100px;
+  margin: 0 auto;
+  height: 0;
+  line-height: 2em;
+  text-align: center;
+}
+/* line 520, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .nav-sidebar-btn {
+  float: left;
+  cursor: pointer;
+  /*margin-left: 1%;*/
+}
+/* line 523, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .nav-sidebar-action {
+  float: right;
+  line-height: 2em;
+  height: 2em;
+  margin-left: 4px;
+}
+/* line 528, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav .top-bar {
+  position: absolute;
+  width: 100%;
+  height: 60px;
+    padding: 20px;
+  line-height: 0px;
+  /*padding-top: 3px;*/
+  background-color: #fff;
+  color: #333;
+  border-bottom: 0px;
+}
+
+.html-profile-nav .top-bar #js-button-reprints {
+    font-size: 12px;
+    min-width: 120px;
+    padding: 7px 10px;
+    float: right;
+    height: auto;
+    top: -3px;
+    margin-right: 10px;
+    z-index: 21;
+}
+
+.html-profile-nav .top-bar #js-button-download {
+    font-size: 12px;
+    min-width: 120px;
+    padding: 7px 10px;
+    float: left;
+    height: auto;
+    top: -3px;
+    z-index: 21;
+    margin-left: 10px;
+}
+
+.html-profile-nav .top-bar #js-button-download .custom-download {
+    margin: -10px;
+    margin-left: 0;
+    margin-right: 2px;
+    background: url("/img/design/pdf2_white.svg");
+    background-size: 18px 18px;
+    width: 18px;
+    height: 18px;
+    display: none;
+}
+
+@media only screen and (max-width: 50em) {
+   /* .hypothesis_container {
+        margin-top: -20px;
+    }*/
+    .html-profile-nav {
+          margin-left: -20px;
+          margin-right: -20px;
+    }
+}
+@media only screen and (min-width: 50.063em) {
+   /* .hypothesis_container {
+        margin-top: -30px;
+    }*/
+    .html-profile-nav {
+          margin-left: -50px;
+          margin-right: -50px;
+    }
+}
+@media only screen and (min-width: 64.063em) {
+   /* .hypothesis_container {
+        margin-top: -60px;
+    }*/
+    .html-profile-nav {
+          margin-left: -60px;
+          margin-right: -60px;
+    }
+}
+
+/* line 530, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.affix {
+  position: fixed;
+}
+
+/* line 532, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav.affix {
+  top: 0px;
+}
+
+/* line 534, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-nav.affix {
+  top: 0px;
+}
+
+/* line 538, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+#SupplementaryFiles li {
+  list-style: none;
+}
+/* line 540, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+#SupplementaryFiles li b {
+  font-weight: normal;
+}
+/* line 542, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+#SupplementaryFiles li .html-supplementary_p {
+  display: inline;
+}
+
+/* line 544, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+li.html-sypp_material {
+  list-style: none;
+}
+/* line 546, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+li.html-sypp_material b {
+  font-weight: normal;
+}
+/* line 548, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+li.html-sypp_material .html-supplementary_p {
+  display: inline;
+}
+
+/* line 550, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+#maincol {
+  font-size: 11pt;
+}
+
+.ui-tooltip {
+    word-wrap: break-word;
+    opacity: 1 !important;
+    background-color: #ffffff !important;
+}
+
+/* line 553, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+#main-content .html-profile-nav.dark, #main-content .html-profile-nav .top-bar.dark {
+    background-color: #333;
+    color: #ddd;
+}
+
+/* line 555, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-profile-nav.bright, .html-profile-nav .top-bar.bright {
+    background: #fff;
+}
+
+.html-profile-nav.creme, .html-profile-nav .top-bar.creme {
+    background: #fafac8;
+}
+
+.html-profile-nav.bright, article.html-profile-nav.creme, .html-profile-nav.creme {
+  /*background-color: rgba(0, 0, 0, 0.7);*/
+}
+
+/* line 558, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark {
+  background: #333333;
+  color: #dddddd;
+}
+
+#main-content .content__container.dark {
+    background: #333333;
+    color: #dddddd;
+}
+/* line 559, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark .ui-tooltip {
+  background: #cccccc;
+}
+/* line 563, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark h1, article.dark h2, article.dark h3, article.dark h4, article.dark h5, article.dark h6 {
+  color: #dddddd;
+}
+/* line 565, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark a {
+  color: #0099cc;
+}
+/* line 567, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark a:visite {
+  color: #0099cc;
+}
+/* line 569, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark a:link {
+  color: #0099cc;
+}
+/* line 571, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark .html-fig_show, article.dark .html-table_show, article.dark .html-front .active {
+  background: #444444;
+}
+/* line 573, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark .html-oa-logo {
+  background-color: #0099cc;
+  box-shadow: 1px 1px 1px #444444;
+  color: white;
+}
+/* line 577, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark .html-oa-logo a {
+  color: white;
+}
+/* line 579, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.dark .html-oa-logo .html-oa-logo-extended {
+  background-color: #0099cc;
+  color: white;
+  border: 1px solid white;
+}
+
+article.dark label {
+  color: white;
+}
+
+/* line 585, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright h1, article.creme h1, article.bright h2, article.creme h2, article.bright h3, article.creme h3, article.bright h4, article.creme h4, article.bright h5, article.creme h5, article.bright h6, article.creme h6 {
+  color: black;
+}
+/* line 587, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .ui-tooltip, article.creme .ui-tooltip {
+  background: #cccccc;
+}
+/* line 589, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright a, article.creme a {
+  color: #4f5671;
+}
+/* line 593, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright a:link, article.creme a:link {
+  color: #4f5671;
+}
+/* line 595, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .html-front .active, article.creme .html-front .active {
+  background: #cccccc;
+}
+/* line 597, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .html-fig_show, article.creme .html-fig_show, article.bright .html-table_show, article.creme .html-table_show {
+  background: #f6f6f6;
+}
+/* line 599, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .html-oa-logo, article.creme .html-oa-logo {
+  background-color: #1d6297;
+  color: white;
+}
+/* line 602, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .html-oa-logo a, article.creme .html-oa-logo a {
+  color: white;
+}
+/* line 604, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.bright .html-oa-logo .html-oa-logo-extended, article.creme .html-oa-logo .html-oa-logo-extended {
+  background-color: #1d6297;
+  color: white;
+  border: 1px solid white;
+}
+
+/* line 609, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.creme {
+  background: #fafac8;
+}
+#main-content .content__container.creme {
+    background: #fafac8;
+}
+/* line 612, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.creme .ui-tooltip {
+  background: #fafac8;
+}
+/* line 614, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+article.creme .html-fig_show, article.creme .html-table_show {
+  background: #fafac8;
+}
+
+/* line 616, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-tablepopup, .html-figpopup {
+  outline: none;
+  cursor: pointer;
+}
+.html-figpopup {
+  max-width: 400px;
+  display: inline-block;
+  margin: 0 auto;
+}
+.html-tablepopup {
+  width: 200px;
+  margin: 0 auto;
+}
+
+a.html-figpopup{
+  display: inline !important;
+}
+
+/* line 619, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-expand {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAyCAYAAACpgnCWAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAlpJREFUeNpiNDY2ZgACaSDuBWIbKJtS8BSIjwBxMYjNAiTUgfgYEAsxUA+AHBoOxK5AbMsEJFqobAEyAJnbwgS1jZbAFWQJP40t4WFioANgwSYYEBDAUFRUxMDFxYUhZ2JiAqYPHDjAwMPDg1OeoCUlJSUMHBwcDF+/fmX4//8/bXwCsgAE7O3tcWp0cHAA+2Tq1KkM2traeC0hO04EBQUZpk2bBrbg48eP1LcEZMGMGTMYtLS0GN69e8dQWFhIenARAn19fQzKysoMr169YkhPT2f48OED9X3S29vLcOvWLbAFjx8/Zvj8+TM4VWFLWWT75MqVKwxRUVFEq6daZjxz5gwY09QSuviE5NT148cPcIY8ePAgUTmekZERro9oS0CpB5T2ubm5iXbtt2/fGPr7+7E7Alj9/h8WcQKy5CON7fgCsmQfjS3ZDbKkBojf0cgCkLk1IEuuAbEeEK8B4hdUMvwF1DyQuddYJC1qYBJ/oZgaAMWs0cbdaOMOAdys5BlSgnQZODkwpX1zNoDpFd3eDNycrDjlCVqSFqLHwM7GzPDtxx/aNe5AFoBAeMkWnBojSreCfdKUY8WgJi9Im1KYn4edoTnXGmzB56+/qG8JyILWPGsGVTkBhg+ffzI0zzxB/cZdbbo5g7wUH8PbDz8YKiceZvj05Rf1LZm99jJDdqQBQ/ucUwzPX3/FmaoosuTmg/cMee376V/9bp4SAMYjsHH389dfcIZc2eNDUuMOpI9oS0CpJzlQh4GLg/h08R1YBM1df4V4S3YefQDGo4270cYdRY07gAADAEjYxGK8ZXdOAAAAAElFTkSuQmCC) no-repeat 0 0;
+  vertical-align: middle;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+}
+
+/* line 628, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-expand.html-figpopup {
+  top: 0;
+  right: -8px;
+}
+
+/* line 631, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-expand.html-tablepopup {
+  top: -8px;
+  right: -8px;
+}
+
+/* line 634, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-expand:hover {
+  background-position: 0 -25px;
+}
+
+/* line 636, /Users/meng/pro/xml-html/app/assets/stylesheets/articles.css.sass */
+.html-figpopup-link, .html-tablepopup-link {
+  position: relative;
+}
+
+.html-align-center{
+  text-align: center;
+}
+
+.html-align-left{
+  text-align: left;
+}
+
+.html-align-right{
+  text-align: right;
+}
+
+.html-orcid-img{
+  margin-left: 3px;
+  max-width: 15px !important;
+  border-radius: 15px;
+  border: none;
+  position: relative;
+  top: -5px;
+}
+article .underline {
+  border-bottom: 1px solid #000000
+}
+.html-fig-wrap .html-fig-caption{
+    display: block;
+}
+.html-fig-wrap-display{
+    width: 95%;
+}
+.html-back .html-notes{
+    text-align: justify;
+}
+
+
+.html-front .affiliation .affiliation-item, .html-front .affiliation .html-front .index-item {
+  position: absolute;
+  display: inline-block;
+  width: 1em; }
+
+.html-front .affiliation{
+  /*margin-top:0.5em;*/
+}
+.html-front .affiliation .affiliation-name, .html-front .affiliation .html-front .index-name {
+  margin-left: 1em;
+  padding-bottom: 3px;
+  line-height: 1.5em;
+}
+
+.html-front .affiliation > div:first-child {
+  margin-left: 0px; }
+.html-front .index-item {
+  position: absolute;
+  display: inline-block;
+  width: 1em; }
+.html-front .index-name {
+  margin-left: 1em;
+  padding-bottom: 5px; }
+.html-double-underline{
+  border-bottom: 3px double #777;
+}
+#main-content #main-content #middle-column .middle-column__main .html-content__container{
+  padding-top: 0px;
+}
+#main-content #middle-column .middle-column__main article .html-abstracts{
+  padding: 0;
+  text-align: justify;
+  margin-left: 0px;
+}
+
+#main-content #middle-column .middle-column__main .content__container__combined-for-large__first{
+  padding-top: 0px;
+}
+
+.html-abstract-title h2{
+  margin-top: 1em;
+}
+.html-p ul, .html-p dl{
+  text-indent: 0;
+}
+
+.html-break-word{
+  word-break: break-all;
+}
+
+article .openaccess a{
+  color: #fff;
+}
+
+article .openaccess a:link {
+  color: #fff;
+}
+
+
+.html-bio {
+  text-indent:0px;
+}
+.html-bio table{
+  padding-left:0px;
+}
+.html-bio tr{
+  margin-bottom:6pt;
+}
+.html-bio tr td{
+  text-align:justify;
+  padding-bottom:1em;
+}
+.html-bio tr td:first-of-type{
+  padding-right:3.5em;
+  width:150px;
+}
+
+.html-array_table{
+  padding-left: 1em;
+  max-width: 100%;
+  display: block;
+  overflow-x: auto;
+}
+
+article .html-boxed .html-boxed-body .html-array_table{
+  display: table;
+  overflow-x: inherit !important;
+}
+
+article .html-new-fn_group {
+  font-size: 0.875em;
+}
+article .html-new-fn_group ul {
+  padding: 0;
+}
+article .html-new-fn_group li {
+  width: 100%;
+  display: table;
+}
+article .html-new-fn_group li .html-fn-label {
+  float: left;
+  width: 4%;
+  white-space: nowrap;
+}
+article .html-new-fn_group li .html-fn-content {
+  float: left;
+  width: 96%;
+}
+article .html-new-fn_group td {
+  vertical-align: top;
+}
+article .html-new-fn_group td .html-p {
+  text-indent: 0;
+}
+article .html-new-fn_group td .html-label {
+  position: relative;
+  bottom: 0.33em;
+  font-size: smaller;
+}
+
+article .html-table_show table tbody tr td{
+  border-bottom: 0px solid;
+}
+
+article .html-table_show table{
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+article .html-fig_show table{
+  border-collapse: separate;
+  border-spacing: 0px;
+}
+
+article .html-fig_show table tbody tr td{
+  border-bottom: 0px solid;
+}
+
+article .html-abstract{
+  text-align: justify;
+}
+
+article .html-abstract a{
+  font-weight: 0;
+}
+
+article dl.speech{
+  text-indent: 0;
+  margin-left: 2em;
+}
+
+article dl.speech dd{
+  text-indent: 0.5em;
+}
+article dl.speech dt{
+  font-weight: bold;
+}
+
+article .html-back {
+  text-align: justify !important;
+}
+
+article .html-back a {
+  word-break: break-all;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+}
+
+article .html-table_show table{
+  width: auto;
+  min-width: 550px;
+  margin: 20px auto;
+}
+
+article dl {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+article .html-table_show {
+  text-align: justify !important;
+}
+article .html-fig_show {
+  text-align: justify !important;
+}
+
+article table.html-array_table tbody tr td{
+  border-bottom: 0px solid;
+}
+
+article .html-abstract section#Abstract h2{
+  display: block !important;
+}
+
+article .html-abstract section#SimpleSummary h2{
+  display: block !important;
+}

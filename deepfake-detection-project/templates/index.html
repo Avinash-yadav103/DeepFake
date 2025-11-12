@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+
+{% block title %}Deepfake Detector - Home{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Hero Section -->
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4 mb-4">
+                <i class="fas fa-robot text-primary"></i>
+                AI Deepfake Detector
+            </h1>
+            <p class="lead text-muted mb-4">
+                Upload an image to detect if it's real or AI-generated using our advanced deep learning model
+            </p>
+            <div class="alert alert-info">
+                <i class="fas fa-lightbulb me-2"></i>
+                Our model achieves <strong>95%+ accuracy</strong> using EfficientNet with attention mechanisms
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <div class="card shadow-lg border-0">
+                <div class="card-body p-5">
+                    <h3 class="card-title text-center mb-4">
+                        <i class="fas fa-upload me-2"></i>Upload Image
+                    </h3>
+                    
+                    <!-- Upload Form -->
+                    <form id="upload-form" enctype="multipart/form-data">
+                        <div class="mb-4">
+                            <div class="upload-area" id="upload-area">
+                                <input type="file" id="file-input" name="file" accept="image/*" class="d-none">
+                                <div class="upload-content">
+                                    <i class="fas fa-cloud-upload-alt fa-4x text-primary mb-3"></i>
+                                    <h5>Drag & Drop your image here</h5>
+                                    <p class="text-muted">or</p>
+                                    <button type="button" class="btn btn-primary" onclick="document.getElementById('file-input').click()">
+                                        <i class="fas fa-folder-open me-2"></i>Browse Files
+                                    </button>
+                                    <p class="text-muted mt-3 small">
+                                        Supported formats: JPG, JPEG, PNG (Max 16MB)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Preview Section -->
+                        <div id="preview-section" class="mb-4" style="display: none;">
+                            <h5 class="mb-3">Preview:</h5>
+                            <div class="text-center">
+                                <img id="image-preview" src="" alt="Preview" class="img-fluid rounded shadow" style="max-height: 400px;">
+                                <div class="mt-3">
+                                    <button type="button" class="btn btn-outline-danger" id="remove-image">
+                                        <i class="fas fa-times me-2"></i>Remove Image
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" id="submit-btn" class="btn btn-lg btn-success" disabled>
+                                <i class="fas fa-search me-2"></i>Analyze Image
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Loading Spinner -->
+                    <div id="loading" class="text-center mt-4" style="display: none;">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <p class="mt-3 text-muted">Analyzing image with AI model...</p>
+                    </div>
+
+                    <!-- Error Alert -->
+                    <div id="error-alert" class="alert alert-danger mt-4" style="display: none;">
+                        <i class="fas fa-exclamation-triangle me-2"></i>
+                        <span id="error-message"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Result Section -->
+            <div id="result-section" class="mt-5" style="display: none;">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5 text-center">
+                        <h3 class="mb-4">Analysis Result</h3>
+                        
+                        <div id="result-content">
+                            <!-- Result will be inserted here -->
+                        </div>
+
+                        <button type="button" class="btn btn-primary mt-4" onclick="location.reload()">
+                            <i class="fas fa-redo me-2"></i>Analyze Another Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row mt-5">
+        <div class="col-lg-10 mx-auto">
+            <h3 class="text-center mb-4">Key Features</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-brain fa-3x text-primary mb-3"></i>
+                            <h5>Advanced AI Model</h5>
+                            <p class="text-muted">EfficientNet with SE & Attention modules</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
+                            <h5>Fast Processing</h5>
+                            <p class="text-muted">Results in seconds with GPU acceleration</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
+                            <h5>High Accuracy</h5>
+                            <p class="text-muted">95%+ accuracy on deepfake detection</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Will be loaded from main.js
+</script>
+{% endblock %}

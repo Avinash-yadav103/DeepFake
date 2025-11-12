@@ -1,0 +1,15 @@
+deepfake_detection/
+│
+├── app.py                     # Main Flask application
+├── model/
+│   ├── model.h5              # Pre-trained model weights
+│   └── model.py              # Model architecture
+├── static/
+│   └── styles.css            # CSS for styling the UI
+├── templates/
+│   └── index.html            # HTML template for the UI
+├── notebooks/
+│   ├── data_preprocessing.ipynb  # Jupyter Notebook for data preprocessing
+│   ├── model_training.ipynb      # Jupyter Notebook for training the model
+│   └── evaluation.ipynb          # Jupyter Notebook for model evaluation
+└── README.md                  # Project documentation

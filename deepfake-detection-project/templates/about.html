@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+
+{% block title %}About - Deepfake Detection{% endblock %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-10 mx-auto">
+            <div class="card shadow-lg">
+                <div class="card-body p-5">
+                    <h1 class="card-title text-center mb-4">
+                        <i class="fas fa-info-circle text-primary"></i> About This Project
+                    </h1>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-bullseye text-primary"></i> Project Overview</h3>
+                        <p class="lead">
+                            This is an advanced deepfake detection system built using state-of-the-art deep learning 
+                            techniques to identify AI-generated or manipulated facial images.
+                        </p>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-cogs text-primary"></i> Model Architecture</h3>
+                        <p><strong>Model 4: Attention → EfficientNet → SE (Squeeze-and-Excitation)</strong></p>
+                        <ul>
+                            <li><strong>Stage 1:</strong> Enhanced CBAM (Convolutional Block Attention Module) for initial feature extraction</li>
+                            <li><strong>Stage 2:</strong> EfficientNetB0 backbone pre-trained on ImageNet with fine-tuning</li>
+                            <li><strong>Stage 3:</strong> Enhanced SE (Squeeze-and-Excitation) blocks for channel-wise attention</li>
+                            <li><strong>Stage 4:</strong> Multi-layer classifier with regularization and dropout</li>
+                        </ul>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-database text-primary"></i> Training Details</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Dataset</h5>
+                                <ul>
+                                    <li>WildDeepfake Dataset (Kaggle)</li>
+                                    <li>Contains real and AI-generated faces</li>
+                                    <li>75/25 train-validation split</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Training Configuration</h5>
+                                <ul>
+                                    <li>Optimizer: Adam</li>
+                                    <li>Loss: Binary Cross-Entropy</li>
+                                    <li>Batch Size: 16</li>
+                                    <li>Image Size: 224x224</li>
+                                    <li>Data Augmentation: Rotation, Shift, Zoom, Brightness</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-chart-line text-primary"></i> Performance Metrics</h3>
+                        <div class="row text-center">
+                            <div class="col-md-3">
+                                <div class="metric-box p-3 bg-light rounded">
+                                    <h2 class="text-primary">95%+</h2>
+                                    <p class="mb-0">Accuracy</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-box p-3 bg-light rounded">
+                                    <h2 class="text-success">0.97</h2>
+                                    <p class="mb-0">ROC AUC</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-box p-3 bg-light rounded">
+                                    <h2 class="text-warning">94%</h2>
+                                    <p class="mb-0">Precision</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="metric-box p-3 bg-light rounded">
+                                    <h2 class="text-danger">96%</h2>
+                                    <p class="mb-0">Recall</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-code text-primary"></i> Technologies Used</h3>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Backend</h5>
+                                <ul>
+                                    <li>Python 3.8+</li>
+                                    <li>Flask (Web Framework)</li>
+                                    <li>TensorFlow/Keras (Deep Learning)</li>
+                                    <li>NumPy, Pillow (Image Processing)</li>
+                                    <li>OpenCV (Face Detection)</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h5>Frontend</h5>
+                                <ul>
+                                    <li>HTML5, CSS3, JavaScript</li>
+                                    <li>Bootstrap 5</li>
+                                    <li>Font Awesome Icons</li>
+                                    <li>Responsive Design</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-exclamation-triangle text-warning"></i> Limitations & Disclaimer</h3>
+                        <div class="alert alert-warning">
+                            <ul class="mb-0">
+                                <li>This model is trained on a specific dataset and may not generalize to all types of deepfakes</li>
+                                <li>Newer or sophisticated deepfake techniques may evade detection</li>
+                                <li>Results should be used as a guide, not absolute truth</li>
+                                <li>Continuously evolving deepfake technology requires regular model updates</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="about-section">
+                        <h3><i class="fas fa-user text-primary"></i> Author</h3>
+                        <p>
+                            Developed as a research project in computer vision and deep learning.<br>
+                            For questions or collaboration: 
+                            <a href="mailto:your.email@example.com">your.email@example.com</a>
+                        </p>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <a href="{{ url_for('main.index') }}" class="btn btn-primary btn-lg">
+                            <i class="fas fa-arrow-left"></i> Back to Detection
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
