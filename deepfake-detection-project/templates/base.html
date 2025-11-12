@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered deepfake detection using advanced neural networks">
     <title>{% block title %}Deepfake Detector{% endblock %}</title>
     
     <!-- Bootstrap CSS -->
@@ -14,8 +13,6 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    
-    {% block extra_css %}{% endblock %}
 </head>
 <body>
     <!-- Navigation -->
@@ -31,14 +28,12 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'main.index' %}active{% endif %}" 
-                           href="{{ url_for('main.index') }}">
+                        <a class="nav-link" href="{{ url_for('main.index') }}">
                             <i class="fas fa-home me-1"></i>Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {% if request.endpoint == 'main.about' %}active{% endif %}" 
-                           href="{{ url_for('main.about') }}">
+                        <a class="nav-link" href="{{ url_for('main.about') }}">
                             <i class="fas fa-info-circle me-1"></i>About
                         </a>
                     </li>
@@ -48,19 +43,16 @@
     </nav>
 
     <!-- Main Content -->
-    <main>
+    <main class="container my-4">
         {% block content %}{% endblock %}
     </main>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4 mt-5">
         <div class="container">
-            <p class="mb-2">
+            <p class="mb-0">
                 <i class="fas fa-brain me-2"></i>
-                Powered by EfficientNet + Attention Mechanisms
-            </p>
-            <p class="mb-0 text-muted small">
-                © 2025 Deepfake Detection System. Built with TensorFlow & Flask.
+                Deepfake Detection System © 2024
             </p>
         </div>
     </footer>

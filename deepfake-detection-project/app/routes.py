@@ -1,23 +1,25 @@
-from flask import Blueprint, render_template, request, jsonify, current_app, redirect, url_for
-from werkzeug.utils import secure_filename
+from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, current_app
 import os
-from app.models import DeepfakeDetector
-from app.utils import allowed_file, get_file_size, format_file_size
+import cv2
+import numpy as np
 from datetime import datetime
+from werkzeug.utils import secure_filename
+from app.utils import allowed_file, DeepfakeDetector, get_file_size, format_file_size
 
-main_bp = Blueprint('main', __name__)
+# Create blueprint
+bp = Blueprint('main', __name__)
 
-@main_bp.route('/')
+@bp.route('/')
 def index():
     """Home page"""
     return render_template('index.html')
 
-@main_bp.route('/about')
+@bp.route('/about')
 def about():
     """About page"""
     return render_template('about.html')
 
-@main_bp.route('/predict', methods=['POST'])
+@bp.route('/predict', methods=['POST'])
 def predict():
     """Handle image upload and prediction"""
     try:
@@ -79,12 +81,12 @@ def predict():
         
         return jsonify({'error': str(e)}), 500
 
-@main_bp.route('/result')
+@bp.route('/result')
 def result():
     """Result page"""
     return render_template('result.html')
 
-@main_bp.route('/health')
+@bp.route('/health')
 def health():
     """Health check endpoint"""
     detector = DeepfakeDetector.get_instance()
@@ -95,12 +97,12 @@ def health():
         'timestamp': datetime.now().isoformat()
     }), 200
 
-@main_bp.errorhandler(404)
+@bp.errorhandler(404)
 def not_found(error):
     """404 error handler"""
     return render_template('index.html'), 404
 
-@main_bp.errorhandler(500)
+@bp.errorhandler(500)
 def internal_error(error):
     """500 error handler"""
     return jsonify({'error': 'Internal server error'}), 500

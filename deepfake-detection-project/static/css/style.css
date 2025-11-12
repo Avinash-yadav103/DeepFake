@@ -5,7 +5,6 @@
     --danger-color: #dc3545;
     --warning-color: #ffc107;
     --dark-color: #212529;
-    --light-color: #f8f9fa;
 }
 
 body {
@@ -13,10 +12,6 @@ body {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
     background-attachment: fixed;
-}
-
-main {
-    min-height: calc(100vh - 200px);
 }
 
 /* Navbar */
@@ -42,17 +37,7 @@ main {
 
 .upload-area:hover {
     background: rgba(13, 110, 253, 0.1);
-    border-color: #0a58ca;
-}
-
-.upload-area.dragover {
-    background: rgba(13, 110, 253, 0.15);
-    border-color: #0a58ca;
-    transform: scale(1.02);
-}
-
-.upload-content i {
-    opacity: 0.7;
+    border-color: #0056b3;
 }
 
 /* Image Preview */

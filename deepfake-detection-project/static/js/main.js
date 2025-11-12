@@ -216,60 +216,79 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Deepfake Detection System Loaded');
 });
 
-$(document).ready(function() {
-    const uploadArea = $('#upload-area');
-    const fileInput = $('#file-input');
-    const previewSection = $('#preview-section');
-    const imagePreview = $('#image-preview');
-    const submitBtn = $('#submit-btn');
-    const uploadForm = $('#upload-form');
-    const loading = $('#loading');
-    const errorAlert = $('#error-alert');
-    const errorMessage = $('#error-message');
-    const resultSection = $('#result-section');
-    const resultContent = $('#result-content');
-
-    // Drag and drop functionality
-    uploadArea.on('dragover', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).addClass('dragover');
-    });
-
-    uploadArea.on('dragleave', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).removeClass('dragover');
-    });
-
-    uploadArea.on('drop', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        $(this).removeClass('dragover');
-        
-        const files = e.originalEvent.dataTransfer.files;
-        if (files.length > 0) {
-            fileInput[0].files = files;
-            handleFileSelect(files[0]);
-        }
-    });
-
-    // Click to upload
-    uploadArea.on('click', function() {
-        fileInput.click();
-    });
+// Simple JavaScript without jQuery dependency
+document.addEventListener('DOMContentLoaded', function() {
+    const uploadArea = document.getElementById('upload-area');
+    const fileInput = document.getElementById('file-input');
+    const previewSection = document.getElementById('preview-section');
+    const imagePreview = document.getElementById('image-preview');
+    const submitBtn = document.getElementById('submit-btn');
+    const uploadForm = document.getElementById('upload-form');
+    const loading = document.getElementById('loading');
+    const errorAlert = document.getElementById('error-alert');
+    const errorMessage = document.getElementById('error-message');
+    const resultSection = document.getElementById('result-section');
+    const resultContent = document.getElementById('result-content');
+    const removeBtn = document.getElementById('remove-image');
 
     // File input change
-    fileInput.on('change', function(e) {
-        if (this.files && this.files[0]) {
-            handleFileSelect(this.files[0]);
-        }
-    });
+    if (fileInput) {
+        fileInput.addEventListener('change', function(e) {
+            if (this.files && this.files[0]) {
+                handleFileSelect(this.files[0]);
+            }
+        });
+    }
 
     // Remove image button
-    $('#remove-image').on('click', function() {
-        resetForm();
-    });
+    if (removeBtn) {
+        removeBtn.addEventListener('click', function() {
+            resetForm();
+        });
+    }
+
+    // Form submission
+    if (uploadForm) {
+        uploadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData();
+            const file = fileInput.files[0];
+            
+            if (!file) {
+                showError('Please select an image first.');
+                return;
+            }
+
+            formData.append('file', file);
+
+            // Show loading
+            submitBtn.disabled = true;
+            if (loading) loading.style.display = 'block';
+            hideError();
+            if (resultSection) resultSection.style.display = 'none';
+
+            // Make prediction request
+            fetch('/predict', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                displayResult(data);
+            })
+            .catch(error => {
+                showError(error.message || 'An error occurred during prediction.');
+                submitBtn.disabled = false;
+            })
+            .finally(() => {
+                if (loading) loading.style.display = 'none';
+            });
+        });
+    }
 
     // Handle file selection
     function handleFileSelect(file) {
@@ -289,58 +308,16 @@ $(document).ready(function() {
         // Preview image
         const reader = new FileReader();
         reader.onload = function(e) {
-            imagePreview.attr('src', e.target.result);
-            uploadArea.hide();
-            previewSection.show().addClass('fade-in');
-            submitBtn.prop('disabled', false);
-            hideError();
+            if (imagePreview) {
+                imagePreview.src = e.target.result;
+                if (uploadArea) uploadArea.style.display = 'none';
+                if (previewSection) previewSection.style.display = 'block';
+                if (submitBtn) submitBtn.disabled = false;
+                hideError();
+            }
         };
         reader.readAsDataURL(file);
     }
-
-    // Form submission
-    uploadForm.on('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = new FormData();
-        const file = fileInput[0].files[0];
-        
-        if (!file) {
-            showError('Please select an image first.');
-            return;
-        }
-
-        formData.append('file', file);
-
-        // Show loading
-        submitBtn.prop('disabled', true);
-        loading.show().addClass('fade-in');
-        hideError();
-        resultSection.hide();
-
-        // Make prediction request
-        $.ajax({
-            url: '/predict',
-            type: 'POST',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(response) {
-                displayResult(response);
-            },
-            error: function(xhr) {
-                let message = 'An error occurred during prediction.';
-                if (xhr.responseJSON && xhr.responseJSON.error) {
-                    message = xhr.responseJSON.error;
-                }
-                showError(message);
-                submitBtn.prop('disabled', false);
-            },
-            complete: function() {
-                loading.hide();
-            }
-        });
-    });
 
     // Display prediction result
     function displayResult(data) {
@@ -349,9 +326,9 @@ $(document).ready(function() {
         const probability = data.probability.toFixed(2);
 
         const resultHTML = `
-            <div class="result-card ${isFake ? 'fake' : 'real'} fade-in">
-                <div class="result-icon pulse">
-                    <i class="fas fa-${isFake ? 'exclamation-triangle' : 'check-circle'}"></i>
+            <div class="alert ${isFake ? 'alert-danger' : 'alert-success'} text-center">
+                <div class="mb-3">
+                    <i class="fas fa-${isFake ? 'exclamation-triangle' : 'check-circle'} fa-4x"></i>
                 </div>
                 <h2 class="mb-3">
                     ${isFake ? '⚠️ DEEPFAKE DETECTED' : '✅ REAL IMAGE'}
@@ -360,64 +337,52 @@ $(document).ready(function() {
                     The image is classified as <strong>${data.prediction}</strong>
                 </p>
                 
-                <div class="confidence-bar">
-                    <div class="confidence-fill ${isFake ? 'fake' : 'real'}" 
+                <div class="progress mb-3" style="height: 30px;">
+                    <div class="progress-bar ${isFake ? 'bg-danger' : 'bg-success'}" 
                          style="width: ${confidence}%;">
-                        ${confidence}%
+                        <strong>${confidence}%</strong>
                     </div>
                 </div>
                 
-                <div class="mt-4">
-                    <h5>Analysis Details:</h5>
-                    <div class="row mt-3 text-start">
-                        <div class="col-md-6">
-                            <p><strong>Confidence:</strong> ${confidence}%</p>
-                            <p><strong>Fake Probability:</strong> ${probability}%</p>
-                        </div>
-                        <div class="col-md-6">
-                            <p><strong>Model Threshold:</strong> ${(data.threshold * 100).toFixed(1)}%</p>
-                            <p><strong>Upload Time:</strong> ${data.upload_time}</p>
-                        </div>
+                <div class="row text-start">
+                    <div class="col-md-6">
+                        <p><strong>Confidence:</strong> ${confidence}%</p>
+                        <p><strong>Probability:</strong> ${probability}%</p>
                     </div>
-                </div>
-
-                <div class="alert ${isFake ? 'alert-light' : 'alert-light'} mt-4 text-dark">
-                    <i class="fas fa-info-circle me-2"></i>
-                    ${isFake 
-                        ? '<strong>Warning:</strong> This image appears to be AI-generated or manipulated. Exercise caution when sharing or using this content.'
-                        : '<strong>Note:</strong> This image appears to be authentic. However, always verify the source of important media content.'
-                    }
+                    <div class="col-md-6">
+                        <p><strong>Threshold:</strong> ${(data.threshold * 100).toFixed(1)}%</p>
+                        <p><strong>Model:</strong> ${data.model_used || 'DeepLearning'}</p>
+                    </div>
                 </div>
             </div>
         `;
 
-        resultContent.html(resultHTML);
-        resultSection.show().addClass('fade-in');
-
-        // Smooth scroll to result
-        $('html, body').animate({
-            scrollTop: resultSection.offset().top - 100
-        }, 500);
+        if (resultContent) {
+            resultContent.innerHTML = resultHTML;
+        }
+        if (resultSection) {
+            resultSection.style.display = 'block';
+        }
     }
 
     // Show error message
     function showError(message) {
-        errorMessage.text(message);
-        errorAlert.show().addClass('fade-in');
+        if (errorMessage) errorMessage.textContent = message;
+        if (errorAlert) errorAlert.style.display = 'block';
     }
 
     // Hide error message
     function hideError() {
-        errorAlert.hide().removeClass('fade-in');
+        if (errorAlert) errorAlert.style.display = 'none';
     }
 
     // Reset form
     function resetForm() {
-        fileInput.val('');
-        previewSection.hide();
-        uploadArea.show();
-        submitBtn.prop('disabled', true);
-        resultSection.hide();
+        if (fileInput) fileInput.value = '';
+        if (previewSection) previewSection.style.display = 'none';
+        if (uploadArea) uploadArea.style.display = 'block';
+        if (submitBtn) submitBtn.disabled = true;
+        if (resultSection) resultSection.style.display = 'none';
         hideError();
     }
 
