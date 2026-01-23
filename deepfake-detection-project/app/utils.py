@@ -1,13 +1,55 @@
+from flask import current_app
+from PIL import Image
 import os
 import cv2
 import numpy as np
 from datetime import datetime
-from flask import current_app
 
-def allowed_file(filename, allowed_extensions):
+def allowed_file(filename):
     """Check if file extension is allowed"""
     return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in allowed_extensions
+           filename.rsplit('.', 1)[1].lower() in current_app.config['ALLOWED_EXTENSIONS']
+
+def get_image_info(filepath):
+    """Get image metadata"""
+    try:
+        img = Image.open(filepath)
+        return {
+            'format': img.format,
+            'width': img.width,
+            'height': img.height,
+            'mode': img.mode
+        }
+    except Exception as e:
+        print(f"⚠️ Could not get image info: {e}")
+        return {
+            'format': 'Unknown',
+            'width': 0,
+            'height': 0,
+            'mode': 'Unknown'
+        }
+
+def detect_face(filepath):
+    """Detect if image contains a face using OpenCV"""
+    try:
+        import cv2
+        
+        # Load cascade classifier
+        cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
+        face_cascade = cv2.CascadeClassifier(cascade_path)
+        
+        # Read image
+        img = cv2.imread(filepath)
+        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        
+        # Detect faces
+        faces = face_cascade.detectMultiScale(gray, 1.3, 5)
+        
+        return len(faces) > 0
+        
+    except Exception as e:
+        print(f"⚠️ Face detection failed: {e}")
+        return False
 
 def get_file_size(filepath):
     """Get file size in bytes"""

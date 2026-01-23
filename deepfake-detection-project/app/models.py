@@ -218,15 +218,21 @@ class DeepfakeDetector:
             
             # Import TensorFlow components
             if not _import_tensorflow():
-                raise RuntimeError("TensorFlow not available. Please install TensorFlow.")
+                print("⚠️ TensorFlow not available - using demo mode")
+                self.is_loaded = False
+                return False
             
             if not os.path.exists(model_path):
-                raise FileNotFoundError(f"Model file not found: {model_path}")
+                print(f"⚠️ Model file not found: {model_path}")
+                self.is_loaded = False
+                return False
             
             # Build model architecture
+            print("🏗️ Building model architecture...")
             self.model = self.build_model_architecture()
             
             # Load weights
+            print("⚙️ Loading weights...")
             self.model.load_weights(model_path)
             
             self.optimal_threshold = optimal_threshold
@@ -240,8 +246,10 @@ class DeepfakeDetector:
             
         except Exception as e:
             print(f"❌ Error loading model: {str(e)}")
+            import traceback
+            print(traceback.format_exc())
             self.is_loaded = False
-            raise
+            return False
     
     def preprocess_image(self, image_path, target_size=(224, 224)):
         """Preprocess image for prediction"""

@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Display prediction result
     function displayResult(data) {
-        const isFake = data.prediction === 'FAKE';
+        const isFake = data.prediction === 'REAL';
         const confidence = data.confidence.toFixed(2);
         const probability = data.probability.toFixed(2);
 
@@ -331,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <i class="fas fa-${isFake ? 'exclamation-triangle' : 'check-circle'} fa-4x"></i>
                 </div>
                 <h2 class="mb-3">
-                    ${isFake ? '⚠️ DEEPFAKE DETECTED' : '✅ REAL IMAGE'}
+                    ${isFake ? '⚠️ DEEPFAKE DETECTED' : 'REAL IMAGE'}
                 </h2>
                 <p class="lead mb-4">
                     The image is classified as <strong>${data.prediction}</strong>

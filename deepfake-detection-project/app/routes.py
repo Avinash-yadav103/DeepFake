@@ -1,13 +1,30 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify, current_app
+from flask import Blueprint, render_template, request, jsonify, current_app
 import os
-import cv2
-import numpy as np
-from datetime import datetime
 from werkzeug.utils import secure_filename
-from app.utils import allowed_file, DeepfakeDetector, get_file_size, format_file_size
+from app.models import DeepfakeDetector
+from app.utils import allowed_file, get_image_info, detect_face
+import traceback
 
-# Create blueprint
 bp = Blueprint('main', __name__)
+
+# Initialize detector as singleton
+detector = None
+
+def get_detector():
+    """Get or initialize the detector"""
+    global detector
+    if detector is None:
+        detector = DeepfakeDetector.get_instance()
+        # Load model on first request
+        model_path = current_app.config.get('MODEL_PATH')
+        if model_path and os.path.exists(model_path):
+            try:
+                detector.load_model(model_path, current_app.config.get('OPTIMAL_THRESHOLD', 0.5))
+                print(f"✅ Model loaded from {model_path}")
+            except Exception as e:
+                print(f"⚠️ Could not load model: {e}")
+                print("   Will use demo mode")
+    return detector
 
 @bp.route('/')
 def index():
@@ -21,88 +38,70 @@ def about():
 
 @bp.route('/predict', methods=['POST'])
 def predict():
-    """Handle image upload and prediction"""
+    """Predict if uploaded image is fake or real"""
     try:
-        # Check if file was uploaded
+        # Check if file is present
         if 'file' not in request.files:
             return jsonify({'error': 'No file uploaded'}), 400
         
         file = request.files['file']
         
-        # Check if file is selected
         if file.filename == '':
             return jsonify({'error': 'No file selected'}), 400
         
-        # Validate file type
-        if not allowed_file(file.filename, current_app.config['ALLOWED_EXTENSIONS']):
-            return jsonify({
-                'error': f'Invalid file type. Allowed types: {", ".join(current_app.config["ALLOWED_EXTENSIONS"])}'
-            }), 400
+        if not allowed_file(file.filename):
+            return jsonify({'error': 'Invalid file type. Please upload JPG, JPEG, or PNG'}), 400
         
-        # Save file
-        filename = secure_filename(f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{file.filename}")
+        # Save uploaded file
+        filename = secure_filename(file.filename)
         filepath = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
         
-        # Check file size
-        file_size = get_file_size(filepath)
-        if file_size > current_app.config['MAX_FILE_SIZE']:
-            os.remove(filepath)
-            return jsonify({
-                'error': f'File too large. Maximum size: {format_file_size(current_app.config["MAX_FILE_SIZE"])}'
-            }), 400
+        # Get detector and make prediction
+        model = get_detector()
+        result = model.predict(filepath)
         
-        # Load model and predict
-        detector = DeepfakeDetector.get_instance()
+        # Get additional info
+        image_info = get_image_info(filepath)
+        has_face = detect_face(filepath)
         
-        if not detector.is_loaded:
-            detector.load_model(
-                current_app.config['MODEL_PATH'],
-                current_app.config.get('OPTIMAL_THRESHOLD', 0.5)
-            )
+        # Determine color based on prediction
+        if result['is_fake']:
+            color = '#dc3545'  # Red for fake
+            confidence_level = 'High' if result['confidence'] > 70 else 'Medium'
+        else:
+            color = '#28a745'  # Green for real
+            confidence_level = 'High' if result['confidence'] > 70 else 'Medium'
         
-        # Make prediction
-        result = detector.predict(filepath)
+        # Prepare response
+        response = {
+            'success': True,
+            'prediction': result['prediction'],
+            'confidence': result['confidence'],
+            'probability': result['probability'],
+            'is_fake': result['is_fake'],
+            'threshold': result['threshold'],
+            'model_used': result.get('model_used', 'DeepLearning'),
+            'confidence_level': confidence_level,
+            'color': color,
+            'has_face': has_face,
+            'image_info': image_info,
+            'image_url': f'/static/uploads/{filename}'
+        }
         
-        # Add file info to result
-        result['filename'] = filename
-        result['file_size'] = format_file_size(file_size)
-        result['upload_time'] = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        
-        return jsonify(result), 200
+        return jsonify(response), 200
         
     except Exception as e:
-        # Clean up file if it exists
-        if 'filepath' in locals() and os.path.exists(filepath):
-            try:
-                os.remove(filepath)
-            except:
-                pass
-        
-        return jsonify({'error': str(e)}), 500
-
-@bp.route('/result')
-def result():
-    """Result page"""
-    return render_template('result.html')
+        error_msg = str(e)
+        print(f"❌ Prediction error: {error_msg}")
+        print(traceback.format_exc())
+        return jsonify({'error': f'Prediction failed: {error_msg}'}), 500
 
 @bp.route('/health')
 def health():
     """Health check endpoint"""
-    detector = DeepfakeDetector.get_instance()
-    
+    model = get_detector()
     return jsonify({
         'status': 'healthy',
-        'model_loaded': detector.is_loaded,
-        'timestamp': datetime.now().isoformat()
+        'model_loaded': model.is_loaded if model else False
     }), 200
-
-@bp.errorhandler(404)
-def not_found(error):
-    """404 error handler"""
-    return render_template('index.html'), 404
-
-@bp.errorhandler(500)
-def internal_error(error):
-    """500 error handler"""
-    return jsonify({'error': 'Internal server error'}), 500
